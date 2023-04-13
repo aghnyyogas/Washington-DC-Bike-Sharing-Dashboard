@@ -1,7 +1,6 @@
 import streamlit as st 
 import pandas as pd
 import matplotlib.pyplot as plt
-from PIL import Image
 
 # Load  data
 daily_df = pd.read_csv("day.csv")
@@ -73,30 +72,31 @@ def dashboard_musim_favorite(df):
 
 st.title("Dashboard Analisis Data Bike Sharing")
 
-with st.expander("Lihat detail tentang dashboard ini"):
-    st.image("logo_2.png", use_column_width=True)
-    st.markdown("""
-        Sistem ***bike sharing*** adalah generasi baru dari penyewaan sepeda tradisional dengan proses otomatis.
-Saat ini, terdapat lebih dari 500 program berbagi sepeda di seluruh dunia yang terdiri dari lebih dari 500 ribu sepeda.
-Sistem ***bike sharing*** dapat digunakan sebagai jaringan sensor virtual untuk mendeteksi mobilitas di kota.
 
-Proses penyewaan ***bike sharing*** sangat dipengaruhi oleh kondisi lingkungan dan musiman.
-**Data set** yang digunakan pada dashboard ini adalah data history pada tahun **2011 dan 2012 dari sistem Capital Bikeshare, Washington D.C., AS**.
-Data tersebut telah diolah dengan mengekstrak dan menambahkan informasi cuaca dan musiman yang sesuai.
-    """)
 
 with st.sidebar.form('my_form'):
     st.image("logo.png")
-    st.subheader("Pilih Dashboard-Mu")
-    pilihan_dashbord = st.selectbox("", ('', 'Performa sewa', 'Musim Favorit'))
+    pilihan_dashboard = st.selectbox("", ('----Pilih Dashboard----', 'Performa sewa', 'Musim Favorit'))
 
     submitted1 = st.form_submit_button('Tampilkan')
     
 # st.subheader("Biodata Pridadi")
-if pilihan_dashbord == 'Performa sewa':
+if pilihan_dashboard == 'Performa sewa':
     dashboard_performa_tahunan(daily_df)
     dashboard_performa_bulanan(daily_df)
-else:
+elif pilihan_dashboard ==  'Musim Favorit':
     dashboard_musim_favorite(daily_df)
+else:
+    with st.expander("Lihat detail tentang dashboard ini"):
+        st.image("logo_2.png", use_column_width=True)
+        st.markdown("""
+            Sistem ***bike sharing*** adalah generasi baru dari penyewaan sepeda tradisional dengan proses otomatis.
+        Saat ini, terdapat lebih dari 500 program berbagi sepeda di seluruh dunia yang terdiri dari lebih dari 500 ribu sepeda.
+        Sistem ***bike sharing*** dapat digunakan sebagai jaringan sensor virtual untuk mendeteksi mobilitas di kota.
+
+        Proses penyewaan ***bike sharing*** sangat dipengaruhi oleh kondisi lingkungan dan musiman.
+        **Data set** yang digunakan pada dashboard ini adalah data history pada tahun **2011 dan 2012 dari sistem Capital Bikeshare, Washington D.C., AS**.
+        Data tersebut telah diolah dengan mengekstrak dan menambahkan informasi cuaca dan musiman yang sesuai.
+        """)
 
 st.caption("Aghny Yogaswara Arifianyah - Washington D.C Bike Sharing - DiCoding Indonesia")
