@@ -1,4 +1,4 @@
-# Washingthon D.C Boke Sharing Dashboard ✨
+# Washingthon D.C Bike Sharing Dashboard ✨
 
 ## Setup environment
 
