@@ -3,8 +3,8 @@
 ## Setup environment
 
 ```
-1. Buat Folder untuk proyek, contoh analisis-enggunakan-python
-2. Masuk kedalam folder yang dibuat tadi  : cd analisis-enggunakan-python
+1. Buat Folder untuk proyek, contoh proyek-analisis-data
+2. Masuk kedalam folder yang dibuat tadi  : cd proyek-analisis-data
 3. Membuat virtualenv dengan nama env :  python3 -m venv env
 4. Aktifkan dengan perintah : source env/bin/activate
 ```
